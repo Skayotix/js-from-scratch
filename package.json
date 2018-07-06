@@ -1,0 +1,14 @@
+{
+  "name": "js-from-scratch",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ."
+  },
+  "author": "",
+  "license": "MIT",
+  "description": "",
+  "dependencies": {
+    "color": "^3.0.0"
+  }
+}
