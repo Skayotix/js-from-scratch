@@ -3,11 +3,19 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "babel-node src",
-    "test": "eslint src && flow && jest --coverage",
-    "fix": "eslint src --fix && flow",
+    "start": "npm run dev:start",
+    "stop": "npm run prod:stop",
+    "prod": "npm run prod:build && npm run prod:start",
+    "dev:start": "nodemon -e js,jsx --ignore lib --ignore dist --exec babel-node src/server",
+    "dev:wds": "webpack-dev-server --progress",
+    "prod:build": "rimraf lib && babel src -d lib --ignore .test.js && cross-env NODE_ENV=production webpack -p --progress",
+    "prod:start": "cross-env NODE_ENV=production pm2 start lib/server && pm2 logs",
+    "prod:stop": "pm2 delete server",
+    "lint": "eslint src webpack.config.babel.js --ext .js,.jsx",
+    "test": "npm run lint && flow && jest --coverage",
+    "fix": "npm run lint -- --fix && flow",
     "precommit": "npm test",
-    "prepush": "npm test"
+    "prepush": "npm test && npm run prod:build"
   },
   "author": "",
   "license": "MIT",
@@ -15,15 +23,24 @@
   "repository": "https://github.com/Skayotix/js-from-scratch",
   "dependencies": {
     "babel-jest": "^23.2.0",
+    "babel-polyfill": "^6.26.0",
     "compression": "^1.7.2",
     "express": "^4.16.3",
-    "jest": "^23.3.0"
+    "jest": "^23.3.0",
+    "nodemon": "^1.17.5",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
     "babel-eslint": "^8.2.5",
+    "babel-loader": "^7.1.5",
+    "babel-plugin-flow-react-proptypes": "^24.0.1",
     "babel-preset-env": "^1.7.0",
     "babel-preset-flow": "^6.23.0",
+    "babel-preset-react": "^6.24.1",
+    "cross-env": "^5.2.0",
     "eslint": "^4.19.1",
     "eslint-config-airbnb": "^17.0.0",
     "eslint-plugin-compat": "^2.4.0",
@@ -32,7 +49,12 @@
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-react": "^7.9.1",
     "flow-bin": "^0.75.0",
-    "husky": "^0.14.3"
+    "husky": "^0.14.3",
+    "pm2": "^3.0.0",
+    "rimraf": "^2.6.2",
+    "webpack": "^4.15.1",
+    "webpack-cli": "^3.0.8",
+    "webpack-dev-server": "^3.1.4"
   },
   "browserslist": [
     "> 1%"
