@@ -5,7 +5,9 @@
   "scripts": {
     "start": "babel-node src",
     "test": "eslint src && flow && jest --coverage",
-    "fix": "eslint src --fix && flow"
+    "fix": "eslint src --fix && flow",
+    "precommit":"npm test",
+    "prepush":"npm test"
   },
   "author": "",
   "license": "MIT",
@@ -27,7 +29,8 @@
     "eslint-plugin-import": "^2.12.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-react": "^7.9.1",
-    "flow-bin": "^0.75.0"
+    "flow-bin": "^0.75.0",
+    "husky": "^0.14.3"
   },
   "browserslist": [
     "> 1%"
