@@ -6,8 +6,8 @@
     "start": "babel-node src",
     "test": "eslint src && flow && jest --coverage",
     "fix": "eslint src --fix && flow",
-    "precommit":"npm test",
-    "prepush":"npm test"
+    "precommit": "npm test",
+    "prepush": "npm test"
   },
   "author": "",
   "license": "MIT",
@@ -15,6 +15,8 @@
   "repository": "https://github.com/Skayotix/js-from-scratch",
   "dependencies": {
     "babel-jest": "^23.2.0",
+    "compression": "^1.7.2",
+    "express": "^4.16.3",
     "jest": "^23.3.0"
   },
   "devDependencies": {
