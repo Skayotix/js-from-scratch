@@ -5,12 +5,13 @@ Training on js
 
 ### Production
 
-|Name   |Modules      |Description                                                  |
-|-------|:-----------:|-------------------------------------------------------------|
-|Express|`express`    |Popular web application framework for Node                   |
-|       |`compression`|Express middleware to activate Gzip compression on the server|
-|React  |`react`      |Library for building user interfaces by Facebook.            |
-|       |`react-dom`  |React document manipulation                                  |
+|Name   |Modules           |Description                                                  |
+|-------|:----------------:|-------------------------------------------------------------|
+|Express|`express`         |Popular web application framework for Node                   |
+|       |`compression`     |Express middleware to activate Gzip compression on the server|
+|React  |`react`           |Library for building user interfaces by Facebook.            |
+|       |`react-dom`       |React document manipulation                                  |
+|       |`react-hot-loader`|Enabler HMR to work with React                               |
 
 ### Development
 
