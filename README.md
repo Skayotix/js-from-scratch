@@ -12,10 +12,10 @@ Training on js
 |     |`babel-eslint`|Package to enable ESLint *to rely on Babel's parser* instead of its own
 |     |`babel-jest`|Package to make Jest use Babel
 |     |`babel-loader`|Plugin for Webpack that transpiles the code that will end up running in the browser
-|     |`babel-plugin-flow-react-proptypes`
+|     |`babel-plugin-flow-react-proptypes`|Automatically generates PropTypes from Flow annotations
 |     |`babel-preset-env`|Configurations for the most recent ECMAScript features supported by Babel.
 |     |`babel-preset-flow`|Preset for Babel to understand Flow annotations
-|     |`babel-preset-react`||
+|     |`babel-preset-react`|Preset for Babel to understand JSX
 |cross-env|`cross-env`|Enable to pass environment variable to our PM2 binary regardless the platform
 |ESLint|`eslint`|The linter of choice for ES6 code
 |      |`eslint-config-airbnb`|Config created by Airbnb|npx install-peerdeps --dev eslint-config-airbnb
