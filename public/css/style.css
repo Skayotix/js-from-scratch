@@ -7,3 +7,33 @@ body {
 h1 {
     color: limegreen;
 }
+
+.profile {
+    background: red;
+    box-shadow: 3px 3px 2px #090909;
+}
+
+.profile-col {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.profile-col1 {
+    width: 75px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 75px;
+    margin: 0;
+    background: green;
+}
+
+.profile-col1 img {
+    transform: translateX(-50%);
+    max-width: 130px;
+    box-shadow: 3px 3px 2px #090909;
+}
+
+.profile-col2 {
+    width: 400px;
+    padding-left: 20px;
+}
