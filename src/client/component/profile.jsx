@@ -29,3 +29,5 @@ const Profile = ({ avatar, pseudo, age }: ProfileProps) => (
 )
 
 export default Profile
+
+// <Profile avatar="https://s.gravatar.com/avatar/a45f7f43eb8a85b3c1cdae2b1104660e.jpg" pseudo="damien" age="20" />

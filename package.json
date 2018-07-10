@@ -25,9 +25,13 @@
     "babel-polyfill": "^6.26.0",
     "compression": "^1.7.2",
     "express": "^4.16.3",
+    "immutable": "^4.0.0-rc.2",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
-    "react-hot-loader": "^4.0.0"
+    "react-hot-loader": "^4.0.0",
+    "react-redux": "^5.0.7",
+    "redux": "^4.0.0",
+    "redux-actions": "^2.4.0"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",

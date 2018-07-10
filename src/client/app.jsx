@@ -1,21 +1,17 @@
 // @flow
 
 import React from 'react'
-import Profile from './profile'
-
-const SousComponent = () => (
-  <h2>
-Je suis un super sous-composant!
-  </h2>
-)
+import HelloButton from './container/hello-button'
+import Message from './container/message'
+import { APP_NAME } from '../shared/config'
 
 const App = () => (
   <div>
     <h1>
-Hello toto!
+      {APP_NAME}
     </h1>
-    <SousComponent />
-    <Profile avatar="https://s.gravatar.com/avatar/a45f7f43eb8a85b3c1cdae2b1104660e.jpg" pseudo="damien" age="20" />
+    <Message />
+    <HelloButton />
   </div>
 )
 
