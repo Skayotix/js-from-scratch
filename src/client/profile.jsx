@@ -16,10 +16,12 @@ const Profile = ({ avatar, pseudo, age }: ProfileProps) => (
     <div className="profile-infos profile-col profile-col2">
       <p>
         Pseudo:
+        {' '}
         {pseudo}
       </p>
       <p>
         Age:
+        {' '/* magnifique ! */}
         {age}
       </p>
     </div>

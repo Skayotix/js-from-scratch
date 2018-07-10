@@ -20,6 +20,7 @@ const wrapApp = AppComponent => (
 // flow-disable-next-line
 ReactDOM.render(wrapApp(App), rootEl)
 
+// flow-disable-next-line
 if (module.hot) {
   // flow-disable-next-line
   module.hot.accept('./app', () => {
