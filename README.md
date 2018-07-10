@@ -5,8 +5,8 @@ Training on js
 
 ### Development
 
-|Name|Modules|Description|Shortcut cmd
-|---|---|---|---
+|Name|Modules|Description
+|---|---|---
 |Babel|`babel-cli`|JS Transpiler of ES6 code (and other things like React's JSX syntax)
 |     |`babel-core`|peer-dependency of `babel-loader`
 |     |`babel-eslint`|Package to enable ESLint *to rely on Babel's parser* instead of its own
@@ -18,7 +18,7 @@ Training on js
 |     |`babel-preset-react`|Preset for Babel to understand JSX
 |cross-env|`cross-env`|Enable to pass environment variable to our PM2 binary regardless the platform
 |ESLint|`eslint`|The linter of choice for ES6 code
-|      |`eslint-config-airbnb`|Config created by Airbnb|npx install-peerdeps --dev eslint-config-airbnb
+|      |`eslint-config-airbnb`|Config created by Airbnb<br/>`npx install-peerdeps --dev eslint-config-airbnb`
 |      |`eslint-plugin-flowtype`|ESLint plugin to lint Flow annotations
 |Flow|`flow-bin`|A static type checker by Facebook
 |Husky|`husky`|Git Hook
