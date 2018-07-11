@@ -1,5 +1,5 @@
 # js-from-scratch
-Training on js, folowing the [verekia][] [tutorial][].
+Training on js, folowing the [verekia][]'s [tutorial][].
 
 ## Tools explaination reminder
 
@@ -92,4 +92,4 @@ Conbine reducedr with state.
 ---------------------------------------------------------
 
 [verekia]:  https://github.com/verekia "Verakia GitHub page"
-[tutorial]: https://github.com/verekia/js-stack-from-scratch/ "JavaScript Stack from Scratch"
+[tutorial]: https://github.com/verekia/js-stack-from-scratch/#javascript-stack-from-scratch "JavaScript Stack from Scratch"
