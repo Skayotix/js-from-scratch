@@ -48,21 +48,33 @@ Training on js, folowing the [verekia][]'s [tutorial][].
 
 ### Hello Action
 
+#### Action creation
+
 ```JavaScript
 const sayHello = createAction(SAY_HELLO)
 ```
 
 Register an action for the type `SAY_HELLO`.
 
+#### Action call
+
 ```JavaScript
-const mapDispatchToProps = dispatch => ({
-  handleClick: () => { dispatch(sayHello('Hello!')) },
+dispatch(sayHello('Hello!'))
+```
+
+This will trigger a `SAY_HELLO` action with `'Hello!'` as payload.
+
+### Hello Reducer
+
+#### Initial state
+
+```JavaScript
+const initialState = Immutable.fromJS({
+  message: 'Initial reducer message',
 })
 ```
 
-Register onClick event (Button's prop `handleClick`) to trigger action with content as payload.
-
-### Hello Reducer
+Declaration of the initial state for the `helloReduce`.
 
 #### Function declaration
 
@@ -78,6 +90,44 @@ const helloReducer = (state: Immut = initialState, action: { type: string, paylo
 ```
 
 Declare reducer that handle redux ractions. This one will read the type of the action and, in case of `SAY_HELLO` action, it will manipulate states.
+
+Function `helloReducer`:
+- contains an inital state `state: Immut = initialState`
+- contains a `switch` to process action type
+- change the state in case of `SAY_HELLO` action
+
+### Button Container
+
+#### React component
+
+##### Flow type
+
+```JavaScript
+type Props = {
+  label: string,
+  handleClick: Function,
+}
+```
+
+##### Component
+
+```JavaScript
+const Button = ({ label, handleClick }: Props) => (
+  <button type="button" onClick={handleClick}>
+    {label}
+  </button>
+)
+```
+
+#### Containerization
+
+```JavaScript
+const mapStateToProps = () => ({
+  label: 'Say hello',
+})
+```
+
+### Message Container
 
 ### Store Creation
 
