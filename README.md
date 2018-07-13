@@ -1,6 +1,8 @@
 # js-from-scratch
 Training on js, folowing the [verekia][]'s [tutorial][].
 
+------------------------------------------------------------
+
 ## Tools explaination reminder
 
 ### Production
@@ -64,38 +66,6 @@ dispatch(sayHello('Hello!'))
 
 This will trigger a `SAY_HELLO` action with `'Hello!'` as payload.
 
-### Hello Reducer
-
-#### Initial state
-
-```JavaScript
-const initialState = Immutable.fromJS({
-  message: 'Initial reducer message',
-})
-```
-
-Declaration of the initial state for the `helloReduce`.
-
-#### Function declaration
-
-```JavaScript
-const helloReducer = (state: Immut = initialState, action: { type: string, payload: any }) => {
-  switch (action.type) {
-    case SAY_HELLO:
-      return state.set('message', action.payload)
-    default:
-      return state
-  }
-}
-```
-
-Declare reducer that handle redux ractions. This one will read the type of the action and, in case of `SAY_HELLO` action, it will manipulate states.
-
-Function `helloReducer`:
-- contains an inital state `state: Immut = initialState`
-- contains a `switch` to process action type
-- change the state in case of `SAY_HELLO` action
-
 ### Button Container
 
 #### React component
@@ -127,7 +97,91 @@ const mapStateToProps = () => ({
 })
 ```
 
+Will set `label` prop to `"Say hello"` on state change.
+
+```JavaScript
+const mapDispatchToProps = dispatch => ({
+  handleClick: () => { dispatch(sayHello('Hello!')) },
+})
+```
+
+Will set a dispach trigger.
+
+```JavaScript
+export default connect(mapStateToProps, mapDispatchToProps)(Button)
+```
+
+Will connect `mapStateToProp` and `mapDispatchToProps` to the `Button` react component and return a react component used as container.
+
 ### Message Container
+
+#### React component
+
+##### Flow type
+
+```JavaScript
+type Props = {
+  message: string,
+}
+```
+
+##### Component
+
+```JavaScript
+const Message = ({ message }: Props) => (
+  <p>
+    {message}
+  </p>
+)
+```
+
+#### Containerization
+
+```JavaScript
+const mapStateToProps = state => ({
+  message: state.hello.get('message'),
+})
+```
+
+Will set `meassage` to the hello state's `message` on state change
+
+```JavaScript
+export default connect(mapStateToProps)(Message)
+```
+
+Will connect `mapStateToProp` to the `Message` react component and return a react component used as container.
+
+### Hello Reducer
+
+#### Initial state
+
+```JavaScript
+const initialState = Immutable.fromJS({
+  message: 'Initial reducer message',
+})
+```
+
+Declaration of the initial state for the `helloReduce`.
+
+#### Function declaration
+
+```JavaScript
+const helloReducer = (state: Immut = initialState, action: { type: string, payload: any }) => {
+  switch (action.type) {
+    case SAY_HELLO:
+      return state.set('message', action.payload)
+    default:
+      return state
+  }
+}
+```
+
+Declare reducer that handle redux ractions. This one will read the type of the action and, in case of `SAY_HELLO` action, it will manipulate state linked to this reducer.
+
+Function `helloReducer`:
+- contains an inital state `state: Immut = initialState`
+- contains a `switch` to process action type
+- change the state in case of `SAY_HELLO` action
 
 ### Store Creation
 
@@ -137,9 +191,21 @@ const store = createStore(combineReducers({ hello: helloReducer }),
   isProd ? undefined : window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
 ```
 
-Conbine reducedr with state.
+Conbine reducer with state. Hereby reate a state `hello` managed by a `helloReducer`. The second argument enable the use of the redux devtools if the server is in dev mode and the navigator extention installed.
 
 ---------------------------------------------------------
+
+## Small look about Docker
+
+```JSon
+{
+  "storage-driver": "overlay2",
+  "hosts": ["unix:///var/run/docker.sock", "tcp://0.0.0.0:2375"]
+}
+```
+
+The crazy `daemon.json` I didn't reach to create.
+
 
 [verekia]:  https://github.com/verekia "Verakia GitHub page"
 [tutorial]: https://github.com/verekia/js-stack-from-scratch/#javascript-stack-from-scratch "JavaScript Stack from Scratch"
