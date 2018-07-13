@@ -12,12 +12,16 @@ Training on js, folowing the [verekia][]'s [tutorial][].
 |Express    |`express`         |Popular web application framework for Node
 |ImmutableJS|`immutable`       |Enable to manipulate immutable collections
 |           |`compression`     |Express middleware to activate Gzip compression on the server
+|Fetch      |`isomorphic-fetch`|Polyfill that makes `fetch()` work cross-browsers and in Node too!
 |React      |`react`           |Library for building user interfaces by Facebook.
 |           |`react-dom`       |React document manipulation
 |           |`react-hot-loader`|Enabler HMR to work with React
 |           |`react-redux`     |Connects a Redux store with React components
+|           |`react-router`    |Declarative routing for React
+|           |`react-router-dom`|
 |Redux      |`redux`           |Handle the lifecycle of the application
 |           |`redux-action`    |Redux actions
+|           |`redux-thunk`     |Extend Redux's functionalities to allow action creators to return functions
 
 ### Development
 
@@ -36,11 +40,13 @@ Training on js, folowing the [verekia][]'s [tutorial][].
 |ESLint   |`eslint`                           |The linter of choice for ES6 code
 |         |`eslint-config-airbnb`             |Config created by Airbnb<br/>`npx install-peerdeps --dev eslint-config-airbnb`
 |         |`eslint-plugin-flowtype`           |ESLint plugin to lint Flow annotations
+|Mocker   |`fetch-mock`                       |Mock the `fetch()` function
 |Flow     |`flow-bin`                         |A static type checker by Facebook
 |Husky    |`husky`                            |Git Hook
 |Jest     |`jest`                             |A JavaScript testing library by Facebook
 |Nodemon  |`nodemon`                          |Utility to automatically restart Node server when file changes happen in the directory|
 |PM2      |`pm2`                              |Process Manager for Node, keeps your processes alive in production
+|Redux    |`redux-mock-store`                 |Mock the redux store
 |RimRaf   |`rimraf`                           |A neat simple package to delete files with cross platform support
 |Webpack  |`webpack`                          |A module bundler
 |         |`webpack-cli`                      |Command line interface
@@ -81,7 +87,7 @@ type Props = {
 
 ##### Component
 
-```JavaScript
+```jsx
 const Button = ({ label, handleClick }: Props) => (
   <button type="button" onClick={handleClick}>
     {label}
@@ -127,7 +133,7 @@ type Props = {
 
 ##### Component
 
-```JavaScript
+```jsx
 const Message = ({ message }: Props) => (
   <p>
     {message}
@@ -192,6 +198,17 @@ const store = createStore(combineReducers({ hello: helloReducer }),
 ```
 
 Conbine reducer with state. Hereby reate a state `hello` managed by a `helloReducer`. The second argument enable the use of the redux devtools if the server is in dev mode and the navigator extention installed.
+
+```jsx
+const wrapApp = (AppComponent, reduxStore) =>
+  <Provider store={reduxStore}>
+    <AppContainer>
+      <AppComponent />
+    </AppContainer>
+  </Provider>
+```
+
+Include app in the Hot Loader and in the store.
 
 ---------------------------------------------------------
 

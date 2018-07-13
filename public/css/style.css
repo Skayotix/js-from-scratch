@@ -9,6 +9,7 @@ h1 {
 }
 
 .profile {
+    margin-top: 10px;
     background: tomato;
     box-shadow: 3px 3px 2px #090909;
     color: #fff;
