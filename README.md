@@ -16,11 +16,13 @@ Training on js, folowing the [verekia][]'s [tutorial][].
 |React      |`react`           |Library for building user interfaces by Facebook.
 |           |`react-dom`       |React document manipulation
 |           |`react-hot-loader`|Enabler HMR to work with React
+|           |`react-jss`|CSS-in-JS library to write styles in JavaScript and inject them
 |           |`react-redux`     |Connects a Redux store with React components
 |           |`react-router`    |Declarative routing for React
 |           |`react-router-dom`|
 |Redux      |`redux`           |Handle the lifecycle of the application
 |           |`redux-action`    |Redux actions
+|           |`react-helmet`    |A library to inject content to the `<head>`
 |           |`redux-thunk`     |Extend Redux's functionalities to allow action creators to return functions
 
 ### Development

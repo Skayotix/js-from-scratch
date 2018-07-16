@@ -2,3 +2,4 @@
 suppress_comment= \\(.\\|\n\\)*\\flow-disable-next-line
 [ignore]
 .*immutable\.js\.flow
+.*/node_modules/jss/.*

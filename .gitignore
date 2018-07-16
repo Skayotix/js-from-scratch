@@ -1,7 +1,7 @@
-.DS_Store
-/*.log
-node_modules/
 /coverage/
-/lib/
 /dist/
+/lib/
+node_modules/
+/*.log
+.DS_Store
 workgroup.code-workspace

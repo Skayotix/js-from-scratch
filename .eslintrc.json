@@ -11,7 +11,8 @@
         "semi": [2, "never"],
         "no-unexpected-multiline": 2,
         "compat/compat": 2,
-        "react/jsx-one-expression-per-line": 0
+        "react/jsx-one-expression-per-line": 0,
+        "function-paren-newline": 0
     },
     "env": {
         "browser": true,

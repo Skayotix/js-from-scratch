@@ -8,7 +8,7 @@ type Props = {
 }
 
 const Button = ({ label, handleClick }: Props) => (
-  <button type="button" onClick={handleClick}>
+  <button type="button" onClick={handleClick} className="btn btn-primary">
     {label}
   </button>
 )
